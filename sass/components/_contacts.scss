@@ -1,0 +1,29 @@
+.contacts-list {
+  @extend %flex-centred;
+  margin-left: auto;
+
+  &-item:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+.contacts-link {
+  @include font(500, $main-font-size, 1.172, 00.02em, $secondary-text-color);
+
+  @extend %flex-centred;
+  padding: 32px 0;
+
+  fill: currentColor;
+  text-decoration: none;
+
+  transition: color 250ms $timing-function, fill 250ms $timing-function;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+    fill: currentColor;
+  }
+}
+svg.icon-tel,
+svg.icon-mail {
+  margin-right: 10px;
+}

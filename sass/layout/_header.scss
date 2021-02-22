@@ -1,0 +1,43 @@
+.header .container {
+  @extend %flex-centred;
+}
+.header-border {
+  border-bottom: 1px solid #ececec;
+}
+.navigation-list-link {
+  position: relative;
+  @include font(500, $main-font-size, 1.172, 00.02em, $main-text-color);
+
+  transition: color 250ms $timing-function;
+
+  &.current::after {
+    content: "";
+    display: block;
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: currentColor;
+  }
+  &:hover,
+  &:focus {
+    color: $accent-color;
+    fill: currentColor;
+  }
+}
+.navigation {
+  @extend %flex-centred;
+}
+
+.navigation-list {
+  @extend %flex-centred;
+  &-item:not(:last-child) {
+    margin-right: 50px;
+  }
+  &-link {
+    padding: 32px 0;
+  }
+}
